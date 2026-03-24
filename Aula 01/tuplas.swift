@@ -17,3 +17,15 @@ print(pessoa.nome) //"Ana" está sendo acessada pela label
 // destructuring
 let (nome, idade, _) = pessoa
 print(nome, idade) //"Ana 30"
+
+let pessoa2 = (
+    nome: "Ana", idade: 30, ativo: true,
+    nome2: "Bruno", idade2: 25, ativo2: false
+)
+
+switch pessoa2 {
+case (let n, let i, true, let n2, let i2, false) where i >= 30: 
+    print("\(n) é adulta com pelo menos 30 anos e ativa")
+default:
+    break
+}
